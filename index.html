@@ -12,20 +12,37 @@
 
     <script id="panel-embajador">
         const CONFIG = {
-            // 1. TUS DATOS BÁSICOS
+            // ==========================================
+            // 1. TUS DATOS BÁSICOS Y CONTACTO
+            // ==========================================
             nombreNegocio: "Distribuidor Independiente FWP",
-            whatsapp: "56939033461", // Tu número de WhatsApp sin el +
+            whatsapp: "56939033461", // Tu número sin el +
             email: "tu-correo@gmail.com",
 
+            // ==========================================
+            // 1.B TUS DATOS BANCARIOS (Para Transferencias)
+            // ==========================================
+            bancoNombre: "Banco Estado",
+            bancoTipo: "Cuenta RUT",
+            bancoNumero: "12345678",
+            bancoTitular: "Juan Pérez",
+            bancoRut: "12.345.678-9",
+
+            // ==========================================
             // 2. PUBLICIDAD (META ADS)
-            pixelMeta: "", // Pega aquí solo los números de tu Pixel. Si no tienes, déjalo vacío ("").
+            // ==========================================
+            pixelMeta: "", 
             
-            // 3. CONFIGURACIÓN DE TU PAÍS (Escribe "chile", "peru" o "mexico" en minúsculas)
-            paisOperacion: "chile", 
+            // ==========================================
+            // 3. CONFIGURACIÓN DE TU PAÍS 
+            // ==========================================
+            paisOperacion: "chile", // "chile", "peru" o "mexico"
             moneda: "$", 
             textoEnvio: "Envío Local",
 
-            // 4. TUS PRECIOS LOCALES (Solo números)
+            // ==========================================
+            // 4. TUS PRECIOS LOCALES
+            // ==========================================
             precios: {
                 // --- CHILE ---
                 renova1: "49.990", renovaVIP: "239.990",
@@ -46,26 +63,28 @@
                 comboMX: "110"
             },
 
-            // 5. TUS LINKS DE PAGO (Pega aquí los links de Mercado Pago, Flow, etc.)
+            // ==========================================
+            // 5. TUS LINKS DE PAGO 
+            // ==========================================
             pagos: {
                 // --- CHILE ---
-                renova1: "https://mpago.la/...", renovaVIP: "https://mpago.la/...",
-                burn1: "https://mpago.la/...", burnVIP: "https://mpago.la/...",
-                boost1: "https://mpago.la/...", boostVIP: "https://mpago.la/...",
-                liv1: "https://mpago.la/...", livVIP: "https://mpago.la/...",
-                comboCL1: "https://mpago.la/...", comboCL2: "https://mpago.la/...", 
-                comboCL3: "https://mpago.la/...", comboCL4: "https://mpago.la/...",
+                renova1: "[https://mpago.la/](https://mpago.la/)...", renovaVIP: "[https://mpago.la/](https://mpago.la/)...",
+                burn1: "[https://mpago.la/](https://mpago.la/)...", burnVIP: "[https://mpago.la/](https://mpago.la/)...",
+                boost1: "[https://mpago.la/](https://mpago.la/)...", boostVIP: "[https://mpago.la/](https://mpago.la/)...",
+                liv1: "[https://mpago.la/](https://mpago.la/)...", livVIP: "[https://mpago.la/](https://mpago.la/)...",
+                comboCL1: "[https://mpago.la/](https://mpago.la/)...", comboCL2: "[https://mpago.la/](https://mpago.la/)...", 
+                comboCL3: "[https://mpago.la/](https://mpago.la/)...", comboCL4: "[https://mpago.la/](https://mpago.la/)...",
                 // --- PERÚ ---
-                renovaPE1: "https://mpago.pe/...",
-                burnplus1: "https://mpago.pe/...", burnplusVIP: "https://mpago.pe/...",
-                boostPE1: "https://mpago.pe/...",
-                livPE1: "https://mpago.pe/...",
-                omega1: "https://mpago.pe/...", omegaVIP: "https://mpago.pe/...",
-                comboPE: "https://mpago.pe/...",
+                renovaPE1: "[https://mpago.pe/](https://mpago.pe/)...",
+                burnplus1: "[https://mpago.pe/](https://mpago.pe/)...", burnplusVIP: "[https://mpago.pe/](https://mpago.pe/)...",
+                boostPE1: "[https://mpago.pe/](https://mpago.pe/)...",
+                livPE1: "[https://mpago.pe/](https://mpago.pe/)...",
+                omega1: "[https://mpago.pe/](https://mpago.pe/)...", omegaVIP: "[https://mpago.pe/](https://mpago.pe/)...",
+                comboPE: "[https://mpago.pe/](https://mpago.pe/)...",
                 // --- MÉXICO ---
-                renovaMX1: "https://mpago.mx/...", renovaMXVIP: "https://mpago.mx/...",
-                scentiaMX1: "https://mpago.mx/...",
-                comboMX: "https://mpago.mx/..."
+                renovaMX1: "[https://mpago.mx/](https://mpago.mx/)...", renovaMXVIP: "[https://mpago.mx/](https://mpago.mx/)...",
+                scentiaMX1: "[https://mpago.mx/](https://mpago.mx/)...",
+                comboMX: "[https://mpago.mx/](https://mpago.mx/)..."
             }
         };
     </script>
@@ -74,11 +93,9 @@
         :root { --renova: #c0267a; --burn: #8cc63f; --boost: #f26522; --liv: #00aeef; --scentia: #b45309; --omega: #0ea5e9; --dark: #111827; --bg: #fdfdfd; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); margin: 0; padding: 0; color: var(--dark); line-height: 1.5; padding-bottom: 0px; scroll-behavior: smooth; }
         
-        /* BANNER URGENCIA */
         .urgency-banner { background: #ef4444; color: white; text-align: center; padding: 12px; font-weight: bold; position: sticky; top: 0; z-index: 1000; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: background 0.5s; }
         #countdown { font-variant-numeric: tabular-nums; background: rgba(0,0,0,0.2); padding: 3px 10px; border-radius: 6px; margin-left: 5px; font-size: 1.1rem; }
         
-        /* HERO Y CARRUSEL */
         .hero { position: relative; overflow: hidden; height: clamp(500px, 75vh, 800px); display: flex; flex-direction: column; justify-content: center; background-color: #111; padding: 2rem 1rem; text-align: center; }
         .carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center top; opacity: 0; transition: opacity 1.5s ease-in-out; filter: brightness(0.35); }
         .carousel-slide.active { opacity: 1; }
@@ -86,12 +103,10 @@
         .hero h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); line-height: 1.1; letter-spacing: -1px; font-weight: 800; margin: 0 0 0.5rem; color: #ffffff; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
         .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); margin-top: 10px; color: #e5e7eb; max-width: 650px; margin: 0 auto; text-shadow: 0 2px 10px rgba(0,0,0,0.8); font-weight: 400; }
         
-        /* ESTRUCTURA GENERAL */
         .container { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; display: flex; flex-direction: column; gap: 4rem; }
         .product-section { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3rem; background: #fff; padding: 3rem; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.03); scroll-margin-top: 80px; }
         .product-section:nth-child(even) { flex-direction: row-reverse; }
         
-        /* IMÁGENES ESTANDARIZADAS (Flyer o Envase sin deformar) */
         .image-col { flex: 1; min-width: 300px; position: relative; display: flex; justify-content: center; align-items: center; }
         .glow { position: absolute; width: 250px; height: 250px; border-radius: 50%; filter: blur(60px); opacity: 0.15; z-index: 0; transition: opacity 0.5s ease; }
         .product-img { max-width: 100%; height: 350px; object-fit: contain; position: relative; z-index: 1; transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.5s ease; }
@@ -99,7 +114,6 @@
         .product-section:hover .glow { opacity: 0.3; }
         .aura-renova { background: var(--renova); } .aura-burn { background: var(--burn); } .aura-boost { background: var(--boost); } .aura-liv { background: var(--liv); } .aura-scentia { background: var(--scentia); } .aura-omega { background: var(--omega); }
         
-        /* TEXTOS Y CAJAS DE PRECIOS */
         .text-col { flex: 1.5; min-width: 300px; }
         .tag { font-size: 0.85rem; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; margin-bottom: 0.5rem; display: block; }
         .text-col h2 { font-size: 2.5rem; margin: 0 0 0.5rem; letter-spacing: -1px; }
@@ -117,13 +131,11 @@
         .value-stack .highlight { color: #f97316; font-weight: bold; }
         .price { font-size: 2rem; font-weight: 800; color: #000; margin-bottom: 1rem; display: block; transition: color 0.3s; }
         
-        /* BOTONES */
         .btn-pago { display: block; width: 100%; padding: 16px; border-radius: 10px; font-size: 1rem; font-weight: bold; text-align: center; text-decoration: none; box-sizing: border-box; transition: all 0.2s ease; text-transform: uppercase; cursor: pointer; }
         .btn-pago:hover { transform: scale(1.02); } 
         .btn-renova { background-color: var(--renova); color: white; } .btn-burn { background-color: var(--burn); color: white; } .btn-boost { background-color: var(--boost); color: white; } .btn-liv { background-color: var(--liv); color: white; } .btn-scentia { background-color: var(--scentia); color: white; } .btn-omega { background-color: var(--omega); color: white; }
         .btn-outline { background-color: transparent; border: 2px solid #ddd; color: #333; } .btn-outline:hover { border-color: #111; background-color: #111; color: white; }
         
-        /* COMBOS */
         .combos-wrapper { padding: 4rem 2rem; background: #111827; border-radius: 24px; color: white; text-align: center; }
         .combos-wrapper h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
         .combos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
@@ -137,7 +149,6 @@
         .btn-combo { display: block; background: #f97316; color: white; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; box-sizing: border-box; transition: 0.2s;}
         .btn-combo:hover { background: #ea580c; }
         
-        /* TESTIMONIOS CIRCULARES */
         .testimonials-section { text-align: center; background: #fff; padding-bottom: 2rem; }
         .testimonials-section h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #111; }
         .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -148,28 +159,33 @@
         .test-author { font-weight: bold; margin: 0; color: #111; font-size: 1.1rem; }
         .test-text { font-style: italic; color: #555; line-height: 1.6; margin: 0; }
 
-        /* GARANTÍA, FAQ Y FOOTER */
-        .guarantee-section { background: #f8fafc; padding: 4rem 1rem; text-align: center; }
-        .guarantee-box { max-width: 800px; margin: 0 auto; background: white; padding: 3rem 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 2px dashed #cbd5e1; }
-        .faq-section { padding: 4rem 1rem; max-width: 800px; margin: 0 auto; }
-        .faq-item { background: white; border-radius: 12px; margin-bottom: 1rem; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #f1f5f9; }
-        .faq-question { font-weight: bold; font-size: 1.1rem; color: #1e293b; margin: 0; display: block; cursor: pointer; outline: none; }
-        .faq-answer { margin-top: 1rem; color: #64748b; font-size: 0.95rem; line-height: 1.6; }
-        .site-footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 3rem 2rem 6rem 2rem; }
-        .dragon-signature { color: #f97316; font-weight: 800; letter-spacing: 2px; font-size: 1.2rem; text-transform: uppercase; display: block; margin-top: 10px; }
-
-        /* BOTÓN FLOTANTE WHATSAPP */
         .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50px; padding: 12px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-decoration: none; font-weight: bold; z-index: 9999; transition: transform 0.3s; }
         .whatsapp-float:hover { transform: scale(1.05); color: white; }
         .whatsapp-float svg { width: 24px; height: 24px; }
         
-        /* MODAL FICHA */
         .modal-ficha { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:100000; display:none; flex-direction:column; align-items:center; justify-content:center; cursor:zoom-out; }
         .modal-ficha.active { display: flex; }
         .modal-ficha img { max-width:95%; max-height:85%; border-radius:10px; box-shadow:0 0 40px rgba(0,0,0,0.5); border: 2px solid #fff; }
         
-        /* Clase clave para ocultar países */
         .hide-country { display: none !important; }
+
+        .modal-checkout { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17, 24, 39, 0.9); z-index: 100000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal-checkout.active { display: flex; }
+        .checkout-box { background: #fff; width: 90%; max-width: 480px; border-radius: 24px; padding: 2.5rem 2rem; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2); text-align: center; max-height: 90vh; overflow-y: auto; }
+        .close-checkout { position: absolute; top: 15px; right: 15px; background: #f1f5f9; border: none; width: 35px; height: 35px; border-radius: 50%; font-weight: bold; cursor: pointer; color: #64748b; transition: 0.2s; }
+        .close-checkout:hover { background: #e2e8f0; color: #0f172a; }
+        .checkout-input { width: 100%; padding: 14px 15px; margin-bottom: 15px; border: 2px solid #e2e8f0; border-radius: 12px; box-sizing: border-box; font-family: inherit; font-size: 1rem; outline: none; transition: 0.2s; background: #f8fafc; }
+        .checkout-input:focus { border-color: #c0267a; background: #fff; }
+        .btn-transferencia { background: #111827; color: white; border: 2px solid #111827; margin-bottom: 12px; }
+        .btn-mercadopago { background: #009ee3; color: white; border: 2px solid #009ee3; margin-bottom: 12px; }
+        .btn-confirm-transfer { background: #10b981; color: white; border: 2px solid #10b981; margin-top: 15px; }
+        
+        .value-stack-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 15px; text-align: left; margin-bottom: 20px; }
+        .value-stack-box ul { padding-left: 20px; margin: 10px 0 0 0; color: #166534; font-size: 0.9rem; }
+        .value-stack-box li { margin-bottom: 5px; }
+        .bank-details-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: left; margin-bottom: 20px; }
+        .bank-details-box p { margin: 5px 0; font-size: 0.95rem; color: #334155; }
+        .bank-details-box strong { color: #0f172a; }
     </style>
 </head>
 <body>
@@ -196,8 +212,7 @@
             <h3 style="color: #c0267a; margin-bottom: 1rem; text-align: center; font-size: 1.8rem; font-weight: 800;">Asesor Virtual de Bienestar</h3>
             <p style="text-align: center; color: #444; margin-bottom: 2rem; font-size: 1rem;">Analizamos tu perfil para recomendarte el protocolo ideal.</p>
             
-            <div id="quiz-questions-all" style="text-align: left; color: #111;">
-                </div>
+            <div id="quiz-questions-all" style="text-align: left; color: #111;"></div>
 
             <button onclick="procesarDiagnostico()" style="width: 100%; background: #c0267a; color: white; border: none; padding: 1.2rem; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; margin-top: 20px;">
                 Obtener mi diagnóstico experto
@@ -211,7 +226,6 @@
     </section>
 
     <div class="container hide-country" id="catalogo-chile">
-        
         <section class="product-section" id="prod-renova-cl">
             <div class="image-col"><div class="glow aura-renova"></div><img src="img/renova.png" class="product-img"></div>
             <div class="text-col">
@@ -347,45 +361,27 @@
     </div>
 
     <div class="container hide-country" id="catalogo-peru">
-        
         <section class="product-section" id="prod-renova-pe">
             <div class="image-col"><div class="glow aura-renova"></div><img src="img/renova2.png" class="product-img"></div>
             <div class="text-col">
                 <span class="tag" style="color: #c0267a;">Reconstrucción Celular</span><h2>Renöva+</h2>
                 <p class="description">Mejora la salud de tu piel, uñas y cabello. Fórmula premium en sus dos presentaciones.</p>
-                <details style="background: rgba(192, 38, 122, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid rgba(192, 38, 122, 0.2);">
-                    <summary style="font-weight: bold; color: #c0267a; outline: none;">🧬 Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; line-height: 1.4;">
-                        <strong>Ingredientes Clave:</strong> Biopéptidos Activos de Colágeno, Resveratrol, Coenzima Q10, Vitamina C, Zinc, Magnesio.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-renova.jpg')" style="color:#c0267a; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid"><div class="offer-box"><span class="price val-precio-dinamico" data-producto="renovaPE1">0</span><a href="#" class="btn-pago btn-outline link-pago-dinamico" data-link="renovaPE1">Comprar</a></div></div>
             </div>
         </section>
 
         <section class="product-section" id="prod-burnplus-pe">
-            <div class="image-col"><div class="glow aura-burn"></div><img src="img/burnplus.png" class="product-img" onerror="this.src='https://via.placeholder.com/300x400?text=24BURN%2B'"></div>
+            <div class="image-col"><div class="glow aura-burn"></div><img src="img/burnplus.png" class="product-img"></div>
             <div class="text-col">
                 <span class="tag" style="color: #8dc63f;">Metabolismo y Rendimiento</span><h2>24BURN+</h2>
                 <p class="description">Activa tu metabolismo, potencia el rendimiento físico y optimiza la oxidación de grasa.</p>
-                <details style="background: rgba(141, 198, 63, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: left; cursor: pointer; border: 1px solid rgba(141, 198, 63, 0.2);">
-                    <summary style="font-weight: bold; color: #8dc63f; outline: none;">🍀 Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; color: #333; line-height: 1.4;">
-                        <strong>Ingredientes Clave:</strong> Limón, alcachofa, espárrago, té verde, té rojo, té negro, magnesio, ginseng y brócoli.<br><br>
-                        <strong>Síntesis de Beneficio:</strong> Acelera la recuperación muscular para volver a tu ritmo en menos tiempo, mientras eleva tu estado antioxidante protegiendo el cuerpo del estrés diario.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-burnplus.jpg')" style="color:#8dc63f; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid">
                     <div class="offer-box">
                         <div class="badge badge-urgency">🔥 STOCK LIMITADO</div><p style="margin:0; font-weight:bold;">Activador Físico</p>
-                        <ul class="value-stack"><li>1 Frasco 24BURN+ (280g)</li><li><span class="txt-envio-dinamico">Envío Local</span> <span class="free">GRATIS</span></li></ul>
                         <div style="margin-top: 15px;"><span class="price val-precio-dinamico" data-producto="burnplus1">0</span><a href="#" class="btn-pago btn-outline link-pago-dinamico" data-link="burnplus1">Comprar 1 Unidad</a></div>
                     </div>
                     <div class="offer-box offer-vip">
                         <div class="badge">PROGRAMA INTENSIVO</div><p style="margin:0; font-weight:bold;">Rendimiento Total</p>
-                        <ul class="value-stack"><li>Pack 24BURN+ VIP</li><li>Acceso Comunidad <span class="free">VIP</span></li></ul>
                         <div style="margin-top: 15px;"><span class="price val-precio-dinamico" data-producto="burnplusVIP">0</span><a href="#" class="btn-pago btn-burn link-pago-dinamico" data-link="burnplusVIP">Activar Mi Cuerpo</a></div>
                     </div>
                 </div>
@@ -397,13 +393,6 @@
             <div class="text-col">
                 <span class="tag" style="color: #e65c00;">Energía y Enfoque</span><h2>E-BOOST</h2>
                 <p class="description">Energía limpia y rendimiento físico superior con el poder milenario de los Andes.</p>
-                <details style="background: rgba(230, 92, 0, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid rgba(230, 92, 0, 0.2);">
-                    <summary style="font-weight: bold; color: #e65c00; outline: none;">⚡ Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; line-height: 1.4;">
-                        <strong>Ingredientes Clave (Fórmula Perú):</strong> Maca Negra, Huanarpo Macho, Vitaminas del Complejo B y Aminoácidos esenciales.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-boost.jpg')" style="color:#e65c00; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid"><div class="offer-box"><span class="price val-precio-dinamico" data-producto="boostPE1">0</span><a href="#" class="btn-pago btn-outline link-pago-dinamico" data-link="boostPE1">Comprar</a></div></div>
             </div>
         </section>
@@ -413,39 +402,22 @@
             <div class="text-col">
                 <span class="tag" style="color: #4CAF50;">Detox y Digestión</span><h2>LIV</h2>
                 <p class="description">Desintoxica tu organismo de forma natural y promueve una digestión más ligera.</p>
-                <details style="background: rgba(76, 175, 80, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid rgba(76, 175, 80, 0.2);">
-                    <summary style="font-weight: bold; color: #4CAF50; outline: none;">🌿 Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; line-height: 1.4;">
-                        <strong>Ingredientes Clave:</strong> Cardo Mariano, Alcachofa, Diente de León, Boldo.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-liv.jpg')" style="color:#4CAF50; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid"><div class="offer-box"><span class="price val-precio-dinamico" data-producto="livPE1">0</span><a href="#" class="btn-pago btn-outline link-pago-dinamico" data-link="livPE1">Comprar</a></div></div>
             </div>
         </section>
 
         <section class="product-section" id="prod-omega-pe">
-            <div class="image-col"><div class="glow aura-omega"></div><img src="img/omega.png" class="product-img" onerror="this.src='https://via.placeholder.com/300x400?text=OMEGA360'"></div>
+            <div class="image-col"><div class="glow aura-omega"></div><img src="img/omega.png" class="product-img"></div>
             <div class="text-col">
                 <span class="tag" style="color: #0ea5e9;">Bienestar Integral</span><h2>OMEGA360</h2>
                 <p class="description">Complemento nutricional de precisión metabólica con fórmula disruptiva en prácticas gomitas.</p>
-                <details style="background: rgba(14, 165, 233, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: left; cursor: pointer; border: 1px solid rgba(14, 165, 233, 0.2);">
-                    <summary style="font-weight: bold; color: #0ea5e9; outline: none;">🐟 Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; color: #333; line-height: 1.4;">
-                        <strong>Ingredientes Clave:</strong> Sacha Inchi y Algas Marinas (EPA 300mg + DHA 30mg), Fructooligosacáridos (FOS).<br><br>
-                        <strong>Síntesis de Beneficio:</strong> Alta concentración molecular que ofrece propiedades antiinflamatorias, mejora la salud cardiovascular, refuerza la salud articular y optimiza el perfil lipídico.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-omega.jpg')" style="color:#0ea5e9; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid">
                     <div class="offer-box">
                         <div class="badge badge-urgency">🔥 STOCK LIMITADO</div><p style="margin:0; font-weight:bold;">Longevidad Activa</p>
-                        <ul class="value-stack"><li>1 Frasco OMEGA360 (60 unid)</li><li><span class="txt-envio-dinamico">Envío Local</span> <span class="free">GRATIS</span></li></ul>
                         <div style="margin-top: 15px;"><span class="price val-precio-dinamico" data-producto="omega1">0</span><a href="#" class="btn-pago btn-outline link-pago-dinamico" data-link="omega1">Comprar 1 Unidad</a></div>
                     </div>
                     <div class="offer-box offer-vip">
                         <div class="badge">TRATAMIENTO RECOMENDADO</div><p style="margin:0; font-weight:bold;">Protección Celular</p>
-                        <ul class="value-stack"><li>Pack OMEGA360 VIP</li><li>Acceso Comunidad <span class="free">VIP</span></li></ul>
                         <div style="margin-top: 15px;"><span class="price val-precio-dinamico" data-producto="omegaVIP">0</span><a href="#" class="btn-pago btn-omega link-pago-dinamico" data-link="omegaVIP">Asegurar Tratamiento</a></div>
                     </div>
                 </div>
@@ -467,23 +439,11 @@
     </div>
 
     <div class="container hide-country" id="catalogo-mexico">
-        
         <section class="product-section" id="prod-renova-mx">
-            <div class="image-col">
-                <div class="glow aura-renova"></div>
-                <img src="img/renova-mx.png" class="product-img" onerror="this.src='https://via.placeholder.com/300x400?text=RENOVA+MX'">
-            </div>
+            <div class="image-col"><div class="glow aura-renova"></div><img src="img/renova-mx.png" class="product-img"></div>
             <div class="text-col">
                 <span class="tag" style="color: #c0267a;">Reconstrucción Celular</span><h2>Renöva+</h2>
                 <p class="description">Mejora la salud de tu piel, uñas y cabello.</p>
-                <details style="background: rgba(192, 38, 122, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: left; cursor: pointer; border: 1px solid rgba(192, 38, 122, 0.2);">
-                    <summary style="font-weight: bold; color: #c0267a; outline: none;">🧬 Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; color: #333; line-height: 1.4;">
-                        <strong>Ingredientes Clave:</strong> Biopéptidos Activos de Colágeno (Peptan®), Resveratrol, Coenzima Q10, Vitamina C, Zinc, Magnesio, Fibra de Avena y Arándano.<br><br>
-                        <strong>Síntesis de Beneficio:</strong> El Resveratrol combate el estrés oxidativo aportando a la longevidad, mientras el colágeno ayuda a fortalecer articulaciones y músculos.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-renova.jpg')" style="color:#c0267a; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid">
                     <div class="offer-box">
                         <div class="badge badge-urgency">🔥 STOCK LIMITADO</div><p style="margin:0; font-weight:bold;">Prueba Inicial</p>
@@ -498,20 +458,10 @@
         </section>
 
         <section class="product-section" id="prod-scentia-mx">
-            <div class="image-col">
-                <div class="glow aura-scentia"></div>
-                <img src="img/scentia-mx.png" class="product-img" onerror="this.src='https://via.placeholder.com/300x400?text=SCENTIA+MX'">
-            </div>
+            <div class="image-col"><div class="glow aura-scentia"></div><img src="img/scentia-mx.png" class="product-img"></div>
             <div class="text-col">
                 <span class="tag" style="color: #6b4c41;">Enfoque Mental</span><h2>Scentia (Black & Latte)</h2>
                 <p class="description">Nutrición cerebral avanzada en sus dos exquisitas versiones. Despierta tu genialidad.</p>
-                <details style="background: rgba(107, 76, 65, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid rgba(107, 76, 65, 0.2);">
-                    <summary style="font-weight: bold; color: #6b4c41; outline: none;">☕ Ver Ingredientes y Ciencia</summary>
-                    <div style="padding-top: 12px; font-size: 0.95rem; line-height: 1.4;">
-                        <strong>Ingredientes Clave:</strong> Nootrópicos naturales, adaptógenos, hongos funcionales y café premium.<br><br>
-                        <a href="javascript:void(0)" onclick="verFicha('info-scentia.jpg')" style="color:#6b4c41; font-weight:bold;">🔍 Ficha Técnica Completa</a>
-                    </div>
-                </details>
                 <div class="offers-grid">
                     <div class="offer-box">
                         <div class="badge badge-urgency">🔥 STOCK LIMITADO</div><p style="margin:0; font-weight:bold;">Despertar</p>
@@ -535,95 +485,79 @@
         </div>
     </div>
 
-    <section style="background: #111827; color: white; padding: 3rem 1rem;">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 0 auto; text-align: left;">
-            <div style="background: #1f2937; padding: 2rem; border-radius: 16px; border: 1px solid #374151;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
-                <h3 style="color: #fff; margin-bottom: 1rem;">Pago 100% Seguro</h3>
-                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.5;">Transacción encriptada de extremo a extremo y respaldada por plataformas oficiales como Mercado Pago.</p>
-            </div>
-            <div style="background: #1f2937; padding: 2rem; border-radius: 16px; border: 1px solid #374151;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
-                <h3 style="color: #fff; margin-bottom: 1rem;">Acompañamiento VIP</h3>
-                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.5;">No estás solo. Accede a nuestra comunidad, contacto directo y guías de consumo paso a paso.</p>
-            </div>
-        </div>
-    </section>
-
     <section class="testimonials-section" style="margin-top: 4rem;">
         <h2>Casos Reales de Transformación</h2>
         <div class="test-grid container">
             <div class="test-card">
                 <div class="test-header">
-                    <img src="img/testimonio1.png" alt="Testimonio 1" class="test-img" onerror="this.src='https://via.placeholder.com/65'">
+                    <img src="img/testimonio1.png" alt="Testimonio 1" class="test-img" onerror="this.src='[https://via.placeholder.com/65](https://via.placeholder.com/65)'">
                     <div class="test-info">
                         <div class="stars">★★★★★</div>
-                        <p class="test-author" id="cfg-t1-nombre">Alex T.</p>
+                        <p class="test-author">Alex T.</p>
                     </div>
                 </div>
-                <p class="test-text" id="cfg-t1-texto">"Desde que integré esto a mi rutina, mi energía es inagotable. Totalmente recomendado para rendir al máximo."</p>
+                <p class="test-text">"Desde que integré esto a mi rutina, mi energía es inagotable. Totalmente recomendado para rendir al máximo."</p>
             </div>
             <div class="test-card">
                 <div class="test-header">
-                    <img src="img/testimonio2.png" alt="Testimonio 2" class="test-img" onerror="this.src='https://via.placeholder.com/65'">
+                    <img src="img/testimonio2.png" alt="Testimonio 2" class="test-img" onerror="this.src='[https://via.placeholder.com/65](https://via.placeholder.com/65)'">
                     <div class="test-info">
                         <div class="stars">★★★★★</div>
-                        <p class="test-author" id="cfg-t2-nombre">Brenda C.</p>
+                        <p class="test-author">Brenda C.</p>
                     </div>
                 </div>
-                <p class="test-text" id="cfg-t2-texto">"Mi digestión y mi piel son otras desde que empecé con el protocolo. Hay un antes y un después evidente."</p>
+                <p class="test-text">"Mi digestión y mi piel son otras desde que empecé con el protocolo. Hay un antes y un después evidente."</p>
             </div>
             <div class="test-card">
                 <div class="test-header">
-                    <img src="img/testimonio3.png" alt="Testimonio 3" class="test-img" onerror="this.src='https://via.placeholder.com/65'">
+                    <img src="img/testimonio3.png" alt="Testimonio 3" class="test-img" onerror="this.src='[https://via.placeholder.com/65](https://via.placeholder.com/65)'">
                     <div class="test-info">
                         <div class="stars">★★★★★</div>
-                        <p class="test-author" id="cfg-t3-nombre">Alejandra Q.</p>
+                        <p class="test-author">Alejandra Q.</p>
                     </div>
                 </div>
-                <p class="test-text" id="cfg-t3-texto">"Me sentía estancada, pero este sistema me ayudó a procesar las calorías de forma eficiente. Me siento imparable."</p>
+                <p class="test-text">"Me sentía estancada, pero este sistema me ayudó a procesar las calorías de forma eficiente. Me siento imparable."</p>
             </div>
         </div>
     </section>
 
-    <section style="background: #111827; padding: 4rem 1rem; border-top: 1px solid #374151;">
+    <section style="background: #111827; color: white; padding: 4rem 1rem;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 0 auto; text-align: left;">
+            <div style="background: #1f2937; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #374151;">
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">🔒</div>
+                <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.4rem;">Pago 100% Seguro</h3>
+                <p style="color: #9ca3af; font-size: 1rem; line-height: 1.6;">Transacciones respaldadas, directas y encriptadas. Aseguramos que tu pedido llegue intacto a la puerta de tu casa.</p>
+            </div>
+            <div style="background: #1f2937; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #374151;">
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">🤝</div>
+                <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.4rem;">Acompañamiento VIP</h3>
+                <p style="color: #9ca3af; font-size: 1rem; line-height: 1.6;">No estás solo. Accede a nuestra comunidad exclusiva, contacto directo con tu asesor y guías de consumo paso a paso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f8fafc; padding: 4rem 1rem;">
         <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div style="background: #1f2937; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #374151;">
-                <h3 style="color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">📦 Políticas de Envío</h3>
-                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">Los despachos se procesan en 24h y se entregan en un plazo de 2 a 5 días hábiles a través de couriers oficiales. El costo de envío se especifica al momento de la compra o se incluye gratis en packs promocionales.</p>
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <h3 style="color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">📦 Políticas de Envío</h3>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Los despachos se procesan en 24h y se entregan en un plazo de 2 a 5 días hábiles a través de couriers oficiales. El costo de envío se especifica al momento de la compra o se incluye gratis en packs promocionales.</p>
             </div>
-            <div style="background: #1f2937; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #374151;">
-                <h3 style="color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">🛡️ Políticas de Reembolso</h3>
-                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">Ofrecemos garantía de satisfacción. Se aceptan devoluciones dentro de los primeros 10 días desde la recepción, <strong style="color: #fff;">exclusivamente si el producto está sellado, sin uso y en su embalaje original</strong>. Los costos de retorno son responsabilidad del cliente.</p>
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <h3 style="color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">🛡️ Políticas de Reembolso</h3>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Ofrecemos garantía de satisfacción. Se aceptan devoluciones dentro de los primeros 10 días desde la recepción, <strong style="color: #0f172a;">exclusivamente si el producto está sellado, sin uso y en su embalaje original</strong>. Los costos de retorno son responsabilidad del cliente.</p>
             </div>
         </div>
     </section>
 
-    <section class="faq-section">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Preguntas Frecuentes</h2>
-        <details class="faq-item">
-            <summary class="faq-question">¿Cuánto tiempo tardan los envíos?</summary>
-            <div class="faq-answer">Manejamos logística prioritaria. Dependiendo de tu ciudad, el pedido llega a tu puerta entre 24 a 72 horas hábiles tras la confirmación de pago.</div>
-        </details>
-        <details class="faq-item">
-            <summary class="faq-question">¿Tienen efecto rebote?</summary>
-            <div class="faq-answer">No. Nuestros protocolos están formulados con ingredientes orgánicos y biotecnología que nutre tu sistema celular a largo plazo, sin alterar tu sistema nervioso central.</div>
-        </details>
-        <details class="faq-item">
-            <summary class="faq-question">¿Es seguro comprar aquí?</summary>
-            <div class="faq-answer">Totalmente. Trabajamos con pasarelas de pago encriptadas oficiales y acompañamiento VIP. Nosotros no almacenamos los datos de tu tarjeta.</div>
-        </details>
-    </section>
-
-    <footer class="site-footer" style="background: #0f172a; color: #64748b; text-align: center; padding: 1.5rem 1rem 3.5rem 1rem; line-height: 1.2;">
+    <footer class="site-footer" style="background: #000000; color: #64748b; text-align: center; padding: 2.5rem 1rem 4.5rem 1rem; line-height: 1.2;">
         <p style="margin: 0 0 5px 0; font-size: 0.85rem; font-weight: bold; color: #94a3b8;">© 2026 Future World Products - Distribuidor Independiente</p>
         <p style="margin: 0 0 5px 0; font-size: 0.75rem;">Este sitio no es parte de Facebook ni de Meta Inc.</p>
         <p style="margin: 0 0 10px 0; font-size: 0.8rem;">Contacto: <span id="correo-contacto" style="color: #ea580c; font-weight: bold;"></span></p>
-        <span style="font-size: 0.7rem; letter-spacing: 1px; color: #334155; font-weight: bold;"> 🐉 POWERED BY CLAN DRAGÓN</span>
+        <span style="font-size: 0.7rem; letter-spacing: 1px; color: #334155; font-weight: bold;">⚡ POWERED BY CLAN DRAGÓN</span>
     </footer>
-    
+
     <a href="#" id="wa-float-btn" class="whatsapp-float" target="_blank">
-        <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M16.002 0C7.17 0 0 7.17 0 16.002c0 2.802.732 5.518 2.122 7.918L.46 29.87l6.104-1.604A15.892 15.892 15.892 0 0 0 16.002 32c8.832 0 16.002-7.17 16.002-16.002S24.834 0 16.002 0zm8.338 23.11c-.382 1.076-1.896 1.956-3.056 2.05-.858.07-1.954.218-5.352-1.192-4.088-1.696-6.726-5.844-6.924-6.11-.2-.266-1.652-2.198-1.652-4.198s1.042-2.986 1.41-3.364c.37-.378.8-.472 1.066-.472.266 0 .532 0 .764.012.246.012.576-.094.902.692.342.822 1.156 2.82 1.256 3.02.1.2.166.432.034.698-.132.266-.2.432-.4.666-.198.232-.42.508-.598.698-.198.212-.41.442-.178.84.232.4 1.032 1.706 2.214 2.76 1.528 1.362 2.796 1.782 3.208 1.982.41.2.65.166.896-.118.246-.282 1.056-1.22 1.34-1.64.282-.42.564-.35.942-.208.378.142 2.388 1.126 2.796 1.33.41.202.682.3.782.472.1.17.1.99-.282 2.066z"/></svg>
+        <svg viewBox="0 0 32 32" fill="white" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path d="M16.002 0C7.17 0 0 7.17 0 16.002c0 2.802.732 5.518 2.122 7.918L.46 29.87l6.104-1.604A15.892 15.892 15.892 0 0 0 16.002 32c8.832 0 16.002-7.17 16.002-16.002S24.834 0 16.002 0zm8.338 23.11c-.382 1.076-1.896 1.956-3.056 2.05-.858.07-1.954.218-5.352-1.192-4.088-1.696-6.726-5.844-6.924-6.11-.2-.266-1.652-2.198-1.652-4.198s1.042-2.986 1.41-3.364c.37-.378.8-.472 1.066-.472.266 0 .532 0 .764.012.246.012.576-.094.902.692.342.822 1.156 2.82 1.256 3.02.1.2.166.432.034.698-.132.266-.2.432-.4.666-.198.232-.42.508-.598.698-.198.212-.41.442-.178.84.232.4 1.032 1.706 2.214 2.76 1.528 1.362 2.796 1.782 3.208 1.982.41.2.65.166.896-.118.246-.282 1.056-1.22 1.34-1.64.282-.42.564-.35.942-.208.378.142 2.388 1.126 2.796 1.33.41.202.682.3.782.472.1.17.1.99-.282 2.066z"/></svg>
         Contactar a un Asesor
     </a>
 
@@ -632,34 +566,86 @@
         <img id="imgFicha" src="">
     </div>
 
+    <div id="modalCheckout" class="modal-checkout">
+        <div class="checkout-box">
+            <button class="close-checkout" onclick="cerrarCheckout()">X</button>
+            
+            <div id="checkout-step-1">
+                <h3 style="margin-top:0; color:#0f172a; font-size:1.6rem; margin-bottom: 5px;">Asegura tu pedido 🚀</h3>
+                <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Ingresa tus datos para procesar el envío de <br><strong id="checkout-prod-name" style="color:#c0267a; font-size: 1.1rem;">Producto</strong>.</p>
+                
+                <input type="text" id="chk-nombre" class="checkout-input" placeholder="Tu Nombre y Apellido" required>
+                <input type="text" id="chk-rut" class="checkout-input" placeholder="Tu RUT o DNI" required>
+                <input type="email" id="chk-correo" class="checkout-input" placeholder="Tu Correo Electrónico" required>
+                <input type="text" id="chk-direccion" class="checkout-input" placeholder="Dirección de Envío Completa" required>
+                
+                <div class="value-stack-box" style="margin-top: 5px;">
+                    <strong style="color: #166534; font-size: 0.95rem;">🎁 Beneficios pagando con Transferencia:</strong>
+                    <ul style="margin-bottom: 0;">
+                        <li>✅ <strong>Precio Neto:</strong> Cero comisiones ocultas.</li>
+                        <li>✅ <strong>Despacho Prioritario:</strong> Saltas la fila de envíos.</li>
+                    </ul>
+                </div>
+                
+                <button onclick="procesarPago('transferencia')" class="btn-pago btn-transferencia">🏦 Pagar con Transferencia (VIP)</button>
+                <button onclick="procesarPago('mp')" class="btn-pago btn-mercadopago">💳 Pagar con Mercado Pago / Tarjeta</button>
+            </div>
+
+            <div id="checkout-step-2" style="display: none;">
+                <h3 style="margin-top:0; color:#0f172a; font-size:1.5rem; margin-bottom: 5px;">¡Excelente elección! 🏆</h3>
+                <p style="color:#64748b; font-size:0.95rem; margin-bottom:15px;">Total a transferir: <strong id="transfer-total" style="color:#c0267a; font-size:1.3rem;">0</strong></p>
+
+                <div class="bank-details-box">
+                    <p style="margin-bottom: 10px; text-align: center; color: #c0267a; font-size: 1.1rem;"><strong>👇 Transfiere a esta cuenta 👇</strong></p>
+                    <p><strong>Banco:</strong> <span id="bank-nombre"></span></p>
+                    <p><strong>Tipo de Cuenta:</strong> <span id="bank-tipo"></span></p>
+                    <p><strong>Número:</strong> <span id="bank-num"></span></p>
+                    <p><strong>Titular:</strong> <span id="bank-titular"></span></p>
+                    <p><strong>RUT/DNI:</strong> <span id="bank-rut"></span></p>
+                    <p><strong>Correo:</strong> <span id="bank-mail"></span></p>
+                </div>
+
+                <button onclick="confirmarTransferencia()" class="btn-pago btn-confirm-transfer">📲 Ya transferí (Enviar comprobante)</button>
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 15px; cursor: pointer; text-decoration: underline; font-weight: bold;" onclick="volverAlPaso1()">← Volver a opciones de pago</p>
+            </div>
+
+        </div>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const pais = CONFIG.paisOperacion.toLowerCase().trim();
             
-            // 1. Mostrar Catálogo Correcto
-            const divChile = document.getElementById('catalogo-chile');
-            const divPeru = document.getElementById('catalogo-peru');
-            const divMexico = document.getElementById('catalogo-mexico');
-            
-            if(pais === 'peru') { divPeru.classList.remove('hide-country'); }
-            else if(pais === 'mexico') { divMexico.classList.remove('hide-country'); }
-            else { divChile.classList.remove('hide-country'); } // Chile por defecto
+            if(pais === 'peru') { document.getElementById('catalogo-peru').classList.remove('hide-country'); }
+            else if(pais === 'mexico') { document.getElementById('catalogo-mexico').classList.remove('hide-country'); }
+            else { document.getElementById('catalogo-chile').classList.remove('hide-country'); }
 
-            // 2. Inyectar Precios y Links
             document.querySelectorAll('.val-precio-dinamico').forEach(el => {
                 let id = el.getAttribute('data-producto');
                 if (CONFIG.precios[id]) el.innerText = CONFIG.moneda + " " + CONFIG.precios[id];
             });
             document.querySelectorAll('.txt-envio-dinamico').forEach(el => el.innerText = CONFIG.textoEnvio);
+            
             document.querySelectorAll('.link-pago-dinamico').forEach(el => {
-                let id = el.getAttribute('data-link');
-                if (CONFIG.pagos[id]) el.href = CONFIG.pagos[id];
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const id = el.getAttribute('data-link');
+                    const nombreProd = el.closest('.product-section')?.querySelector('h2')?.innerText || el.closest('.combo-card')?.querySelector('.combo-title')?.innerText || 'Pack FWP';
+                    const precioProd = CONFIG.precios[id] ? (CONFIG.moneda + " " + CONFIG.precios[id]) : '';
+                    abrirCheckout(id, nombreProd, precioProd);
+                });
             });
 
-            // 3. WhatsApp Link Flotante
-            document.getElementById('wa-float-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=Hola, quiero contactar a un asesor para ver las ofertas y hacer un pedido...`;
+            document.getElementById('wa-float-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=Hola, quiero contactar a un asesor...`;
+            document.getElementById('correo-contacto').innerText = CONFIG.email || "Soporte Vía WhatsApp";
+            
+            document.getElementById('bank-nombre').innerText = CONFIG.bancoNombre;
+            document.getElementById('bank-tipo').innerText = CONFIG.bancoTipo;
+            document.getElementById('bank-num').innerText = CONFIG.bancoNumero;
+            document.getElementById('bank-titular').innerText = CONFIG.bancoTitular;
+            document.getElementById('bank-rut').innerText = CONFIG.bancoRut;
+            document.getElementById('bank-mail').innerText = CONFIG.email;
 
-            // 4. MOTOR DEL CARRUSEL HERO
             const slides = document.querySelectorAll('.carousel-slide');
             let currentSlide = 0;
             if(slides.length > 0) {
@@ -667,277 +653,102 @@
                     slides[currentSlide].classList.remove('active');
                     currentSlide = (currentSlide + 1) % slides.length;
                     slides[currentSlide].classList.add('active');
-                }, 4000); // Cambia la imagen cada 4 segundos
+                }, 4000);
             }
-            // MOTOR DEL CONTADOR PERSISTENTE
-            const timeLimit = 30 * 60; // 30 minutos en segundos
-            let timeRemaining = localStorage.getItem('fwpCountdown');
-            if (!timeRemaining) { timeRemaining = timeLimit; }
-            
-            const timerInterval = setInterval(() => {
-                timeRemaining--;
-                localStorage.setItem('fwpCountdown', timeRemaining);
-                let m = Math.floor(timeRemaining / 60);
-                let s = timeRemaining % 60;
-                document.getElementById('countdown').innerText = `${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
-                if (timeRemaining <= 0) {
-                    clearInterval(timerInterval);
-                    document.getElementById('countdown').innerText = "00:00";
-                    localStorage.removeItem('fwpCountdown');
-                }
-            }, 1000);
 
-            // 5. INYECTAR CORREO EN FOOTER
-            document.getElementById('correo-contacto').innerText = CONFIG.email || "Soporte Vía WhatsApp";
-
-            // 6. RENDERIZAR EL QUIZ ADAPTADO POR PAÍS
             const quizContainer = document.getElementById('quiz-questions-all');
             let htmlQuiz = `<p style="font-weight: bold; margin-bottom: 0.8rem;">1. ¿Cuál es tu objetivo prioritario hoy?</p>`;
-
             if (pais === 'peru') {
-                htmlQuiz += `
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="burnplus"> Bajar de peso y rendimiento físico</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="boost"> Mayor enfoque y energía diaria</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="renova"> Cuidado de piel, pelo y articulaciones</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="liv"> Desinflamar y mejorar digestión</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="omega"> Salud cardiovascular y anti-envejecimiento</label>
-                `;
+                htmlQuiz += `<label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="burnplus"> Bajar de peso y rendimiento físico</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="boost"> Mayor enfoque y energía diaria</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="renova"> Cuidado de piel, pelo y articulaciones</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="liv"> Desinflamar y mejorar digestión</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="omega"> Salud cardiovascular y anti-envejecimiento</label>`;
             } else if (pais === 'mexico') {
-                htmlQuiz += `
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="renova"> Cuidado de piel, uñas y regeneración</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="scentia"> Mayor energía, enfoque mental y vitalidad íntima</label>
-                    <p style="font-weight: bold; margin-bottom: 0.8rem;">2. Si eliges energía, ¿qué perfil prefieres?</p>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2mx" value="latte"> Sabor suave y cremoso (Latte)</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2mx" value="black"> Fuerza e intensidad (Café Negro)</label>
-                `;
-            } else { // Chile
-                htmlQuiz += `
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="burn"> Bajar de peso y controlar ansiedad</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="boost"> Mayor enfoque y energía diaria</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="renova"> Cuidado de piel, pelo y articulaciones</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="liv"> Desinflamar y mejorar digestión</label>
-                `;
+                htmlQuiz += `<label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="renova"> Cuidado de piel, uñas y regeneración</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="scentia"> Mayor energía, enfoque mental y vitalidad íntima</label><p style="font-weight: bold; margin-bottom: 0.8rem;">2. Si eliges energía, ¿qué perfil prefieres?</p><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2mx" value="latte"> Sabor suave y cremoso (Latte)</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2mx" value="black"> Fuerza e intensidad (Café Negro)</label>`;
+            } else {
+                htmlQuiz += `<label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="burn"> Bajar de peso y controlar ansiedad</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="boost"> Mayor enfoque y energía diaria</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="renova"> Cuidado de piel, pelo y articulaciones</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q1" value="liv"> Desinflamar y mejorar digestión</label>`;
             }
-
             if (pais !== 'mexico') {
-                htmlQuiz += `
-                    <p style="font-weight: bold; margin-bottom: 0.8rem;">2. ¿Qué obstáculo sientes más presente?</p>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2" value="ansiedad"> Picoteo constante por ansiedad</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2" value="fatiga"> Agotamiento mental post-almuerzo</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2" value="hinchazon"> Hinchazón abdominal frecuente</label>
-                    
-                    <p style="font-weight: bold; margin-bottom: 0.8rem;">3. ¿Cómo es tu nivel de actividad?</p>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q3" value="sedentario"> Paso mucho tiempo sentado</label>
-                    <label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q3" value="activo"> Entreno frecuentemente y busco potenciarme</label>
-                `;
+                htmlQuiz += `<p style="font-weight: bold; margin-bottom: 0.8rem;">2. ¿Qué obstáculo sientes más presente?</p><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2" value="ansiedad"> Picoteo constante por ansiedad</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2" value="fatiga"> Agotamiento mental post-almuerzo</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q2" value="hinchazon"> Hinchazón abdominal frecuente</label><p style="font-weight: bold; margin-bottom: 0.8rem;">3. ¿Cómo es tu nivel de actividad?</p><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q3" value="sedentario"> Paso mucho tiempo sentado</label><label style="display: block; background: #f3f4f6; padding: 14px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; border: 1px solid #ddd;"><input type="radio" name="q3" value="activo"> Entreno frecuentemente y busco potenciarme</label>`;
             }
             quizContainer.innerHTML = htmlQuiz;
         });
 
-        // PROCESADOR DEL QUIZ PROFUNDO
+        let checkoutActualId = ''; let checkoutActualLink = ''; let checkoutActualNombre = ''; let checkoutActualPrecio = '';
+
+        function abrirCheckout(id, nombre, precio) {
+            checkoutActualId = id; checkoutActualLink = CONFIG.pagos[id] || '#'; checkoutActualNombre = nombre; checkoutActualPrecio = precio;
+            document.getElementById('checkout-prod-name').innerText = nombre + " (" + precio + ")";
+            document.getElementById('transfer-total').innerText = precio;
+            document.getElementById('checkout-step-1').style.display = 'block';
+            document.getElementById('checkout-step-2').style.display = 'none';
+            document.getElementById('modalCheckout').classList.add('active');
+        }
+
+        function cerrarCheckout() { document.getElementById('modalCheckout').classList.remove('active'); }
+        function volverAlPaso1() { document.getElementById('checkout-step-2').style.display = 'none'; document.getElementById('checkout-step-1').style.display = 'block'; }
+
+        function procesarPago(metodo) {
+            const nom = document.getElementById('chk-nombre').value.trim();
+            const rut = document.getElementById('chk-rut').value.trim();
+            const email = document.getElementById('chk-correo').value.trim();
+            const dir = document.getElementById('chk-direccion').value.trim();
+
+            if(!nom || !rut || !email || !dir) { alert("⚠️ Por favor, completa todos los campos (Nombre, RUT, Correo y Dirección) para asegurar tu envío."); return; }
+
+            if(metodo === 'transferencia') {
+                document.getElementById('checkout-step-1').style.display = 'none';
+                document.getElementById('checkout-step-2').style.display = 'block';
+            } else {
+                window.location.href = checkoutActualLink;
+            }
+        }
+
+        function confirmarTransferencia() {
+            const nom = document.getElementById('chk-nombre').value.trim();
+            const rut = document.getElementById('chk-rut').value.trim();
+            const email = document.getElementById('chk-correo').value.trim();
+            const dir = document.getElementById('chk-direccion').value.trim();
+            const mensaje = `¡Hola! Acabo de transferir por ${checkoutActualNombre} (${checkoutActualPrecio}).\n\n📦 *Mis datos de envío son:*\n👤 Nombre: ${nom}\n🪪 RUT/DNI: ${rut}\n📧 Correo: ${email}\n📍 Dirección: ${dir}\n\n🧾 *Adjunto mi comprobante de pago.*`;
+            const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
         function procesarDiagnostico() {
             const pais = CONFIG.paisOperacion.toLowerCase().trim();
             const q1 = document.querySelector('input[name="q1"]:checked')?.value;
             if(!q1) { alert("Por favor, selecciona al menos tu objetivo principal."); return; }
-
             let g = ''; let titulo = ''; let desc = ''; let org = ''; let acel = '';
-
-            // Bases de datos de respuestas persuasivas
             const respuestas = {
-                'burn': {
-                    t: 'PROTOCOLO 24BURN', d: 'Tu cuerpo necesita optimizar la forma en que procesa las calorías y frenar la respuesta hormonal a la ansiedad.',
-                    o: 'Para romper el estancamiento, prioriza proteínas en tu primera comida y mantén una ventana de ayuno de 12 horas. Esto estabilizará tus picos de insulina y reducirá el picoteo de forma natural.',
-                    a: 'Actúa como un "hack" metabólico. Sus agentes termogénicos obligan a tu cuerpo a utilizar las reservas de grasa como fuente primaria de energía, mientras neutraliza los antojos por dulces desde la raíz.'
-                },
-                'burnplus': {
-                    t: 'PROTOCOLO 24BURN+', d: 'Tu perfil requiere máxima oxidación térmica y un soporte robusto para el rendimiento físico.',
-                    o: 'Aumenta tu consumo de agua y realiza caminatas de 15 minutos tras las comidas para evitar el almacenamiento de glucógeno innecesario.',
-                    a: 'Acelera la recuperación muscular post-esfuerzo y eleva tu estado antioxidante. Convierte tu cuerpo en un horno quemagrasa sin alterar tu sistema nervioso central.'
-                },
-                'boost': {
-                    t: 'PROTOCOLO E-BOOST', d: 'Tu cerebro y tu cuerpo están pidiendo combustible de alta calidad sin el clásico "efecto rebote".',
-                    o: 'Optimiza tu ritmo circadiano exponiéndote a la luz solar temprano y limitando pantallas de noche. Mantén una hidratación profunda para evitar la "neblina mental".',
-                    a: 'Proporciona energía limpia y sostenida. Potencia tus neurotransmisores para lograr un enfoque láser durante horas, eliminando el agotamiento de media tarde.'
-                },
-                'renova': {
-                    t: 'PROTOCOLO RENÖVA+', d: 'Tu cuerpo te está pidiendo herramientas para su reconstrucción estructural profunda.',
-                    o: 'Duerme al menos 7 horas ininterrumpidas, ya que la regeneración celular ocurre principalmente durante el descanso profundo. Suma alimentos ricos en vitamina C.',
-                    a: 'Aporta Biopéptidos Activos que van directo a la matriz de tu piel y articulaciones. Su absorción inmediata frena el estrés oxidativo y restaura tu juventud celular.'
-                },
-                'liv': {
-                    t: 'PROTOCOLO LIV', d: 'Tu prioridad número uno debe ser el reseteo de tu flora intestinal y la limpieza hepática.',
-                    o: 'Evita los alimentos ultraprocesados por 7 días y mastica cada bocado lentamente para facilitar el trabajo gástrico. Integra vegetales amargos a tus cenas.',
-                    a: 'Funciona como un "reset" digestivo. Limpia los conductos hepáticos y desinflama las paredes intestinales, permitiendo que absorbas los nutrientes correctamente y te despidas de la hinchazón.'
-                },
-                'omega': {
-                    t: 'PROTOCOLO OMEGA360', d: 'Tu sistema requiere apagar la inflamación silenciosa y proteger tu maquinaria interna.',
-                    o: 'Reduce drásticamente el consumo de aceites vegetales inflamatorios (maravilla, canola) y prioriza grasas saludables como palta o aceite de oliva extra virgen.',
-                    a: 'Inunda tus células con ácidos grasos de alta pureza. Actúa como un potente lubricante y antiinflamatorio sistémico que protege tu corazón y nutre tu materia gris.'
-                },
-                'scentia': {
-                    t: 'SISTEMA SCENTIA', d: 'Necesitas despertar tus sentidos, elevar la concentración y recuperar la vitalidad perdida.',
-                    o: 'Controla tus niveles de cortisol con 5 minutos de respiración profunda diaria y evita saturarte de azúcar refinada que roba tu energía vital.',
-                    a: 'Fusiona nootrópicos y adaptógenos milenarios. La Maca y el EnoStim® dilatan tus vasos sanguíneos para un flujo de agudeza mental y una respuesta íntima superior.'
-                }
+                'burn': { t: 'PROTOCOLO 24BURN', d: 'Tu cuerpo necesita optimizar la forma en que procesa las calorías.', o: 'Prioriza proteínas en tu primera comida y mantén ayuno de 12 horas.', a: 'Actúa como un "hack" metabólico. Obliga a usar grasa como energía.' },
+                'burnplus': { t: 'PROTOCOLO 24BURN+', d: 'Requiere máxima oxidación y soporte físico.', o: 'Caminatas de 15 min tras comidas.', a: 'Acelera recuperación y eleva estado antioxidante.' },
+                'boost': { t: 'PROTOCOLO E-BOOST', d: 'Pide combustible de alta calidad sin rebote.', o: 'Luz solar temprano y mucha hidratación.', a: 'Potencia neurotransmisores para enfoque láser.' },
+                'renova': { t: 'PROTOCOLO RENÖVA+', d: 'Pide reconstrucción estructural profunda.', o: 'Duerme 7 horas y suma vitamina C.', a: 'Biopéptidos directos a la matriz de tu piel.' },
+                'liv': { t: 'PROTOCOLO LIV', d: 'Reseteo de flora y limpieza hepática.', o: 'Evita ultraprocesados y mastica lento.', a: 'Limpia conductos hepáticos y desinflama intestino.' },
+                'omega': { t: 'PROTOCOLO OMEGA360', d: 'Apagar inflamación silenciosa.', o: 'Prioriza grasas saludables como palta.', a: 'Potente antiinflamatorio sistémico y celular.' },
+                'scentia': { t: 'SISTEMA SCENTIA', d: 'Despertar sentidos y vitalidad.', o: 'Controla cortisol con respiración profunda.', a: 'Nootrópicos que dilatan vasos sanguíneos para enfoque superior.' }
             };
-
-            // Asignación de datos según respuesta
             let key = q1;
-            if (pais === 'chile') { g = key + '-cl'; }
-            else if (pais === 'peru') { g = key + '-pe'; }
-            else if (pais === 'mexico') {
-                if (key === 'scentia') {
-                    const q2mx = document.querySelector('input[name="q2mx"]:checked')?.value;
-                    g = 'scentia-mx';
-                    respuestas['scentia'].t = (q2mx === 'latte') ? 'SCENTIA LATTE' : 'SCENTIA BLACK';
-                } else { g = 'renova-mx'; }
-            }
-
-            titulo = respuestas[key].t; desc = respuestas[key].d;
-            org = respuestas[key].o; acel = respuestas[key].a;
-
-            // Render del resultado
-            document.getElementById('quiz-questions-all').style.display = 'none';
-            document.querySelector('#quiz-container button').style.display = 'none';
+            if (pais === 'chile') { g = key + '-cl'; } else if (pais === 'peru') { g = key + '-pe'; }
+            else if (pais === 'mexico') { if (key === 'scentia') { g = 'scentia-mx'; respuestas['scentia'].t = (document.querySelector('input[name="q2mx"]:checked')?.value === 'latte') ? 'SCENTIA LATTE' : 'SCENTIA BLACK'; } else { g = 'renova-mx'; } }
             
-            document.getElementById('result-content').innerHTML = `
-                <h4 style="color: #c0267a; font-size: 1.5rem; margin-bottom: 10px; font-weight:800;">${titulo}</h4>
-                <p style="margin-bottom: 15px; color:#444; font-size: 1.1rem;">${desc}</p>
-                <div style="background: #f0fdf4; padding: 20px; border-left: 5px solid #22c55e; border-radius:8px; margin-bottom:15px;">
-                    <strong style="color: #166534; font-size: 1.1rem;">🌿 Acción Orgánica Inmediata:</strong><br>
-                    <span style="color: #15803d; line-height: 1.6;">${org}</span>
-                </div>
-                <div style="background: #fff1f2; padding: 20px; border-left: 5px solid #e11d48; border-radius:8px; margin-bottom:20px; box-shadow: 0 4px 10px rgba(225, 29, 72, 0.1);">
-                    <strong style="color: #9f1239; font-size: 1.1rem;">🚀 El Efecto Acelerador (Biotecnología FWP):</strong><br>
-                    <span style="color: #be123c; line-height: 1.6;">${acel}</span>
-                </div>
-                <button onclick="irAlProducto('${g}')" style="width:100%; background:#111; color:white; padding:18px; border-radius:12px; border:none; font-weight:bold; font-size: 1.1rem; cursor:pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.3s;">VER MI PROTOCOLO SUGERIDO 👇</button>
-            `;
+            document.getElementById('quiz-questions-all').style.display = 'none'; document.querySelector('#quiz-container button').style.display = 'none';
+            document.getElementById('result-content').innerHTML = `<h4 style="color: #c0267a; font-size: 1.5rem; margin-bottom: 10px; font-weight:800;">${respuestas[key].t}</h4><p style="margin-bottom: 15px; color:#444; font-size: 1.1rem;">${respuestas[key].d}</p><div style="background: #f0fdf4; padding: 20px; border-left: 5px solid #22c55e; border-radius:8px; margin-bottom:15px;"><strong style="color: #166534; font-size: 1.1rem;">🌿 Acción Orgánica:</strong><br><span style="color: #15803d; line-height: 1.6;">${respuestas[key].o}</span></div><div style="background: #fff1f2; padding: 20px; border-left: 5px solid #e11d48; border-radius:8px; margin-bottom:20px; box-shadow: 0 4px 10px rgba(225, 29, 72, 0.1);"><strong style="color: #9f1239; font-size: 1.1rem;">🚀 Acelerador (FWP):</strong><br><span style="color: #be123c; line-height: 1.6;">${respuestas[key].a}</span></div><button onclick="irAlProducto('${g}')" style="width:100%; background:#111; color:white; padding:18px; border-radius:12px; border:none; font-weight:bold; font-size: 1.1rem; cursor:pointer;">VER MI PROTOCOLO 👇</button>`;
             document.getElementById('quiz-result').style.display = 'block';
         }
 
-        function irAlProducto(id) {
-            const objetivo = document.getElementById('prod-' + id);
-            if (objetivo) {
-                objetivo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                objetivo.style.transition = "background 0.5s ease";
-                objetivo.style.backgroundColor = "rgba(192, 38, 122, 0.05)";
-                setTimeout(() => { objetivo.style.backgroundColor = "transparent"; }, 2000);
-            }
-        }
-
+        function irAlProducto(id) { const obj = document.getElementById('prod-' + id); if (obj) { obj.scrollIntoView({ behavior: 'smooth', block: 'center' }); obj.style.backgroundColor = "rgba(192, 38, 122, 0.05)"; setTimeout(() => { obj.style.backgroundColor = "transparent"; }, 2000); } }
         function verFicha(imgName) { document.getElementById('modalFicha').classList.add('active'); document.getElementById('imgFicha').src = 'img/' + imgName; }
         function cerrarFicha() { document.getElementById('modalFicha').classList.remove('active'); }
 
+        const timeLimit = 30 * 60; let timeRemaining = localStorage.getItem('fwpCountdown'); if (!timeRemaining) { timeRemaining = timeLimit; }
+        const timerInterval = setInterval(() => {
+            timeRemaining--; localStorage.setItem('fwpCountdown', timeRemaining);
+            let m = Math.floor(timeRemaining / 60); let s = timeRemaining % 60;
+            document.getElementById('countdown').innerText = `${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
+            if (timeRemaining <= 0) { clearInterval(timerInterval); document.getElementById('countdown').innerText = "00:00"; localStorage.removeItem('fwpCountdown'); }
+        }, 1000);
+
         if (CONFIG.pixelMeta && CONFIG.pixelMeta.trim() !== "") {
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', CONFIG.pixelMeta);
-            fbq('track', 'PageView');
-        }
-    </script>
-</body>
-</html>
-
-        // PROCESADOR DEL QUIZ INTERNACIONAL
-        function procesarDiagnostico() {
-            const pais = CONFIG.paisOperacion.toLowerCase().trim();
-            let g = ''; let titulo = ''; let desc = ''; let org = ''; let acel = '';
-
-            if(pais === 'peru') {
-                const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-                const q2 = document.querySelector('input[name="q2"]:checked')?.value;
-                if(!q1 || !q2) { alert("Responde las preguntas"); return; }
-                
-                if(q1 === 'burnplus' || q2 === 'fatiga') {
-                    g = 'burnplus-pe'; titulo = 'PROTOCOLO 24BURN+';
-                    desc = 'Necesitas activar tu metabolismo y mejorar la recuperación física.';
-                    org = 'Inicia tu día con estiramientos suaves.';
-                    acel = '24BURN+ optimiza la oxidación de grasa y potencia tu energía.';
-                } else {
-                    g = 'omega-pe'; titulo = 'PROTOCOLO OMEGA360';
-                    desc = 'Prioridad: desinflamación sistémica y protección cardiovascular.';
-                    org = 'Aumenta tu consumo de agua diaria.';
-                    acel = 'OMEGA360 aporta EPA y DHA puros para protección celular.';
-                }
-            } else if(pais === 'mexico') {
-                const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-                const q2 = document.querySelector('input[name="q2"]:checked')?.value;
-                if(!q1 || !q2) { alert("Responde las preguntas"); return; }
-
-                if(q1 === 'renovaMX') {
-                    g = 'renova-mx'; titulo = 'PROTOCOLO RENÖVA+';
-                    desc = 'Tu cuerpo pide reconstrucción estructural.';
-                    org = 'Descansa antes de las 11 PM.';
-                    acel = 'Renöva+ aporta péptidos para la matriz de tu piel.';
-                } else {
-                    g = 'scentia-mx';
-                    titulo = (q2 === 'latte') ? 'SCENTIA LATTE' : 'SCENTIA BLACK';
-                    desc = 'Tu enfoque está en recuperar la energía y vitalidad íntima.';
-                    org = 'Realiza respiraciones profundas al despertar.';
-                    acel = 'EnoStim y Maca potencian la circulación y el enfoque mental.';
-                }
-            } else {
-                // CHILE
-                const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-                if(!q1) { alert("Responde la pregunta"); return; }
-                g = q1 + '-cl'; titulo = 'PROTOCOLO SUGERIDO'; desc = 'Este es el mejor camino para tu meta en Chile.'; org = 'Toma abundante agua.'; acel = 'Usa la biotecnología FWP para acelerar el proceso.';
-            }
-
-            document.getElementById('quiz-questions-all').style.display = 'none';
-            document.querySelector('#quiz-container button').style.display = 'none';
-            
-            document.getElementById('result-content').innerHTML = `
-                <h4 style="color: #c0267a; font-size: 1.5rem; margin-bottom: 10px; font-weight:800;">${titulo}</h4>
-                <p style="margin-bottom: 15px; color:#444;">${desc}</p>
-                <div style="background: #f0fdf4; padding: 15px; border-left: 4px solid #22c55e; border-radius:8px; margin-bottom:10px;"><strong>🌿 Orgánico:</strong> ${org}</div>
-                <div style="background: #fef2f2; padding: 15px; border-left: 4px solid #ef4444; border-radius:8px; margin-bottom:20px;"><strong>🚀 Acelerador:</strong> ${acel}</div>
-                <button onclick="irAlProducto('${g}')" style="width:100%; background:#111; color:white; padding:15px; border-radius:12px; border:none; font-weight:bold; cursor:pointer;">VER PRODUCTO 👇</button>
-            `;
-            document.getElementById('quiz-result').style.display = 'block';
-        }
-
-        // SCROLL AUTOMÁTICO DESDE EL QUIZ AL PRODUCTO
-        function irAlProducto(id) {
-            const objetivo = document.getElementById('prod-' + id);
-            if (objetivo) {
-                objetivo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                objetivo.style.transition = "background 0.5s ease";
-                objetivo.style.backgroundColor = "rgba(192, 38, 122, 0.05)";
-                setTimeout(() => { objetivo.style.backgroundColor = "transparent"; }, 2000);
-            }
-        }
-
-        // FUNCIONES DEL MODAL PARA FICHAS TÉCNICAS
-        function verFicha(imgName) { 
-            document.getElementById('modalFicha').classList.add('active'); 
-            document.getElementById('imgFicha').src = 'img/' + imgName; 
-        }
-        function cerrarFicha() { 
-            document.getElementById('modalFicha').classList.remove('active'); 
-        }
-
-        // -------------------------------------------------------------
-        // INYECTOR DE PIXEL DE META (Solo se activa si hay un Pixel configurado)
-        // -------------------------------------------------------------
-        if (CONFIG.pixelMeta && CONFIG.pixelMeta.trim() !== "") {
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            
-            fbq('init', CONFIG.pixelMeta);
-            fbq('track', 'PageView'); // Trackea visitas a la página
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','[https://connect.facebook.net/en_US/fbevents.js](https://connect.facebook.net/en_US/fbevents.js)');
+            fbq('init', CONFIG.pixelMeta); fbq('track', 'PageView');
         }
     </script>
 </body>
